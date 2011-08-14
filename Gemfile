@@ -11,6 +11,8 @@ gem 'omniauth'
 gem 'nifty-generators'
 gem 'mongrel', '1.2.0.pre2'
 gem 'cancan'
+gem 'haml'
+gem 'sass'
 
 # Use unicorn as the web server
 # gem 'unicorn'

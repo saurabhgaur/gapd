@@ -1,27 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8"/>
   <title>Gapd2</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-<div id="content">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <div id="user_nav">
-  <% if user_signed_in? %>
-    Signed in as <%= current_user.email %>. Not you?
-    <%= link_to "Sign out", destroy_user_session_path %>
-  <% else %>
-    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-  <% end %>
-</div>
-
-<%= yield %>
-</div>
-
-
+    <header>
+      <hgroup>
+        <h1>Welcome to Get A Post Doc</h1>
+        <h2>The easiest way to get the best Post Doc(s)!</h2>
+      </hgroup>
+    </header>
+    <div id="content">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <nav>
+          <div id="user_nav">
+              <% if user_signed_in? %>
+                Signed in as <%= current_user.email %>. Not you?
+                <%= link_to "Sign out", destroy_user_session_path %>
+              <% else %>
+                <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+              <% end %>
+          </div>
+      </nav>
+      <div id="jobs">
+          <article>
+            <header>
+              <time datetime="2011-08-11" pubdate="pubdate">
+                August 11, 2011
+              </time>
+              <h1>
+                <a href="#" rel="bookmark" title="link to this job"> Job 1</a>
+              </h1>
+            </header>
+            <p>Lorem ipsum dolor sit amet…</p>
+          </article>
+      </div>
+    <%= yield %>
+    </div>
+    <footer>
+      <nav>
+        <h1>Navigation</h1>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/apply/">Apply</a></li>
+              <li><a href="/post_positions/">Post Positions</a></li>
+            </ul>
+      </nav>
+      <nav>
+        <h1>Contact GAPD Admin</h1>
+        <ul>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/help/">Help and FAQ</a></li>
+          <li><a href="/siteindex">Site Map</a></li>
+        </ul>
+      </nav>
+      <section>
+        <h1>W3C Updates</h1>
+        <ul>
+          <li><a href="http://twitter.com/GAPD">Twitter</a></li>
+          <li><a href="http://identi.ca/gapd">Identi.ca</a></li>
+        </ul>
+      </section>
+      <p class="copyright">Copyright © 20011 GAPD</p>
+    </footer>
 </body>
 </html>

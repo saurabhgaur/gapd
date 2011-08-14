@@ -1,0 +1,11 @@
+<%= div_for position do %>
+  <h3>
+    <%= link_to position.title, position %>
+    <br/>
+    <span class='actions'>
+      <%= link_to "Edit", edit_position_path(position) %>
+      <%= link_to "Delete", position, :confirm => "Are you sure?", :method => :delete %>
+    </span>
+  </h3>
+  <%= position.description %>
+<% end %>

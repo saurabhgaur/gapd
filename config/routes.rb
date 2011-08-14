@@ -1,4 +1,14 @@
 Gapd2::Application.routes.draw do
+  get "positions/new"
+
+  get "positions/create"
+
+  get "positions/edit"
+
+  get "positions/update"
+
+  get "positions/list"
+
   resources :authentications
 
 
@@ -11,6 +21,7 @@ Gapd2::Application.routes.draw do
 match '/auth/:provider/callback' => 'authentications#create'
   devise_for :users, :controllers => {:registrations => 'registrations'}
   resources :authentications
+  resources :positions
 
   root :to => 'pages#home'
   #match 'auth/:provider/callback' => 'authentications#create'
